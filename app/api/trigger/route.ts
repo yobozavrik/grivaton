@@ -14,7 +14,6 @@ export async function POST(request: Request) {
     );
   }
 
-  const body = await request.text();
 
   try {
     const webhookResponse = await fetch(webhookUrl, {
@@ -22,7 +21,7 @@ export async function POST(request: Request) {
       headers: {
         "Content-Type": "application/json",
       },
-      body,
+
     });
 
     if (!webhookResponse.ok) {
