@@ -14,24 +14,12 @@ export async function POST(request: Request) {
     );
   }
 
-  let body: unknown = null;
-
-  try {
-    body = await request.json();
-  } catch (error) {
-    return NextResponse.json<ErrorResponse>(
-      { error: "Invalid JSON body" },
-      { status: 400 }
-    );
-  }
-
   try {
     const webhookResponse = await fetch(webhookUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(body),
     });
 
     if (!webhookResponse.ok) {
