@@ -59,9 +59,6 @@ export default function HomePage() {
       case "sending":
         return "sending…";
       case "success":
-        return "Отправлено";
-      case "error":
-        return errorMessage ? `Ошибка: ${errorMessage}` : "Ошибка";
       default:
         return "idle";
     }
