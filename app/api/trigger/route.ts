@@ -14,12 +14,14 @@ export async function POST(request: Request) {
     );
   }
 
+
   try {
     const webhookResponse = await fetch(webhookUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
+
     });
 
     if (!webhookResponse.ok) {
